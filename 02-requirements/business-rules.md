@@ -15,8 +15,10 @@ Aturan bisnis (Business Rules) memuat kebijakan-kebijakan operasional yang diteg
 
 ## 3. Aturan Monitoring & Realisasi
 
-*   **BR-MN-01 (Keterikatan Laporan)**: Laporan monitoring bersifat tidak dapat dihapus (`soft delete` atau restricted) jika sudah terkunci atau diverifikasi untuk menjaga integritas sejarah (_audit trail_).
-*   **BR-MN-02 (Pembaruan Kondisi Otomatis)**: Ketika laporan monitoring disetujui oleh Bappeda, nilai "kondisi" terbaru pada laporan tersebut dapat memicu pembaruan atribut "kondisi" pada master infrastruktur terkait.
+*   **BR-MN-01 (Inisiasi Draft Monitoring)**: Draft monitoring hanya dapat dibuat oleh Operator Bappeda berdasarkan Plotting Anggaran yang telah disetujui. Draft monitoring ini menjadi acuan resmi bagi Operator Kecamatan untuk melakukan digitasi data infrastruktur.
+*   **BR-MN-02 (Kewajiban Digitasi Berdasarkan Draft)**: Operator Kecamatan wajib mengacu pada draft monitoring yang diterbitkan oleh Bappeda dalam melakukan digitasi infrastruktur spasial. Digitasi di luar lingkup draft monitoring harus mendapat persetujuan khusus.
+*   **BR-MN-03 (Keterikatan Laporan)**: Laporan monitoring bersifat tidak dapat dihapus (`soft delete` atau restricted) jika sudah terkunci atau diverifikasi untuk menjaga integritas sejarah (_audit trail_).
+*   **BR-MN-04 (Pembaruan Kondisi Otomatis)**: Ketika laporan monitoring disetujui oleh Bappeda, nilai "kondisi" terbaru pada laporan tersebut dapat memicu pembaruan atribut "kondisi" pada master infrastruktur terkait.
 
 ## 4. Aturan Anggaran & Plotting
 

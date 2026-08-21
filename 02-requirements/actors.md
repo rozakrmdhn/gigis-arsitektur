@@ -14,20 +14,22 @@ Berikut adalah peran (*roles*) utama yang terdefinisi di dalam sistem:
 
 ### 2. Operator Bappeda (`operator_bappeda`)
 
-* **Deskripsi**: Pengguna dari tingkat Kabupaten (Badan Perencanaan Pembangunan Daerah) yang bertugas sebagai verifikator akhir dan perencana.
+* **Deskripsi**: Pengguna dari tingkat Kabupaten (Badan Perencanaan Pembangunan Daerah) yang bertugas sebagai perencana, verifikator akhir, dan inisiator proses monitoring.
 * **Tanggung Jawab**:
-  * Menerima dan memverifikasi usulan/segmen infrastruktur yang diajukan oleh Kecamatan.
-  * Melakukan plotting anggaran.
+  * Melakukan plotting anggaran sebagai dasar perencanaan infrastruktur.
+  * Membuat draft monitoring berdasarkan plotting anggaran sebagai acuan digitasi bagi Operator Kecamatan.
+  * Menerima dan memverifikasi data infrastruktur yang diajukan oleh Kecamatan.
+  * Menyetujui (_approve_) atau menolak pengajuan data dari Kecamatan.
   * Menganalisis hasil pelaporan monitoring seluruh wilayah.
 * **Lingkup Akses**: Seluruh Kabupaten (Semua Kecamatan & Desa).
 
 ### 3. Operator Kecamatan (`operator_kecamatan`)
 
-* **Deskripsi**: Pengguna yang bertanggung jawab mengelola dan memverifikasi data pada tingkat Kecamatan.
+* **Deskripsi**: Pengguna yang bertanggung jawab mengelola data spasial dan memverifikasi data pada tingkat Kecamatan.
 * **Tanggung Jawab**:
-  * Melihat dan mengelola data infrastruktur di dalam kecamatannya.
-  * Memverifikasi data/laporan geotagging yang diajukan oleh Desa untuk diverifikasi Kecamatan.
-  * Melakukan input data infrastruktur atau monitoring mewakili kecamatan.
+  * Melakukan digitasi data infrastruktur spasial (segmen/area) di dalam kecamatannya berdasarkan draft monitoring yang dibuat oleh Bappeda.
+  * Memverifikasi data/laporan geotagging yang diajukan oleh Operator Desa.
+  * Mengajukan (_submit_) data infrastruktur yang telah didigitasi ke Bappeda untuk diverifikasi.
 * **Lingkup Akses**: Terbatas pada ID Kecamatan (`id_kecamatan`) yang melekat pada profil penggunanya.
 
 ### 4. Operator Desa (`operator_desa`)

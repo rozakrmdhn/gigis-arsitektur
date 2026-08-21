@@ -31,9 +31,10 @@ Form geotagging dan data infrastruktur yang dimasukkan dari tingkat bawah harus 
 
 ## 4. Monitoring dan Pelaporan
 
-Sistem harus dapat memantau kondisi dan realisasi infrastruktur seiring waktu. Monitoring dilakukan oleh Operator Kecamatan dan Bappeda.
+Sistem harus dapat memantau kondisi dan realisasi infrastruktur seiring waktu. Monitoring diinisiasi oleh Bappeda dan dilanjutkan oleh Kecamatan melalui proses digitasi.
 
-*   **FR-MN-01**: Sistem harus memungkinkan Operator Kecamatan dan Bappeda membuat formulir/laporan monitoring untuk segmen infrastruktur tertentu.
+*   **FR-MN-00**: Sistem harus memungkinkan Operator Bappeda membuat draft monitoring berdasarkan Plotting Anggaran yang telah disetujui, sebagai acuan resmi bagi Operator Kecamatan untuk melakukan digitasi infrastruktur.
+*   **FR-MN-01**: Sistem harus memungkinkan Operator Kecamatan melihat dan melakukan digitasi infrastruktur spasial berdasarkan draft monitoring yang diterbitkan oleh Bappeda.
 *   **FR-MN-02**: Sistem harus mencatat riwayat perubahan kondisi fisik infrastruktur ke dalam _monitoring log_.
 *   **FR-MN-03**: Sistem harus dapat melampirkan dokumentasi pendukung (foto url) dan keterangan perbaikan/kerusakan pada saat melakukan monitoring.
 *   **FR-MN-04**: Sistem harus menyediakan rekapitulasi atau _summary_ statistik kondisi infrastruktur per desa dan kecamatan yang dapat diakses secara read-only oleh Operator OPD.
