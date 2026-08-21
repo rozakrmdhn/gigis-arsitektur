@@ -30,9 +30,9 @@ Berikut adalah peran (*roles*) utama yang terdefinisi di dalam sistem:
 ### 4. Operator Desa (`operator_desa`)
 *   **Deskripsi**: Pengguna pada tingkat paling dasar (Pemerintah Desa) yang bertugas melakukan _data entry_ dan inventarisasi infrastruktur desa.
 *   **Tanggung Jawab**:
+    *   Memasukkan informasi form geotagging.
     *   Melakukan geotagging lokasi infrastruktur.
-    *   Memasukkan atribut infrastruktur serta membuat laporan monitoring dan realisasi pembangunan di desanya.
-    *   Mengajukan (_submit_) data ke tingkat Kecamatan untuk diverifikasi.
+    *   Mengajukan submit form geotagging ke tingkat Kecamatan untuk diverifikasi.
 *   **Lingkup Akses**: Terbatas pada ID Desa (`id_desa`) yang melekat pada profil penggunanya.
 
 ### 5. Operator OPD (`operator_opd`)
