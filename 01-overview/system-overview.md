@@ -42,7 +42,7 @@ Digunakan untuk mengelola data referensi yang digunakan oleh sistem, seperti:
 
 ### 3.2 Geotagging Infrastruktur
 
-Digunakan oleh Operator Desa untuk melakukan pendataan awal lokasi infrastruktur melalui form geotagging. Data geotagging yang diajukan akan diverifikasi secara berjenjang oleh Kecamatan dan Bappeda.
+Digunakan oleh Operator Desa untuk melakukan pendataan awal lokasi infrastruktur melalui form geotagging. Operator Desa **hanya dapat melakukan geotagging apabila Operator Bappeda telah menerbitkan Plotting Anggaran** yang aktif untuk wilayah desa yang bersangkutan. Data geotagging yang diajukan akan diverifikasi secara berjenjang oleh Kecamatan dan Bappeda.
 
 ### 3.3 Manajemen Data Spasial
 

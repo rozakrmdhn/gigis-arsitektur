@@ -8,8 +8,9 @@ Sistem mencakup area fungsional berikut:
 
 ### 1. Geotagging Infrastruktur
 
-Sistem menyediakan fasilitas bagi Operator Desa untuk melakukan pendataan awal infrastruktur melalui form geotagging. Cakupan:
+Sistem menyediakan fasilitas bagi Operator Desa untuk melakukan pendataan awal infrastruktur melalui form geotagging, **dengan prasyarat Operator Bappeda telah menerbitkan Plotting Anggaran yang aktif** untuk wilayah desa yang bersangkutan. Cakupan:
 
+- Validasi keberadaan Plotting Anggaran aktif sebelum geotagging dapat dilakukan.
 - Input informasi dan koordinat lokasi infrastruktur.
 - Pengajuan (_submit_) form geotagging ke Kecamatan untuk diverifikasi.
 - Akses read-only data infrastruktur dan laporan monitoring khusus desa yang bersangkutan.

@@ -24,6 +24,7 @@ Aturan bisnis (Business Rules) memuat kebijakan-kebijakan operasional yang diteg
 
 *   **BR-PL-01 (Satu Tahun, Satu Plot)**: Suatu usulan atau segmen infrastruktur sebaiknya hanya dikaitkan dengan satu Plotting Anggaran dari jenis sumber dana yang sama dalam satu tahun berjalan, kecuali diizinkan spesifik oleh regulasi multi-tahun.
 *   **BR-PL-02 (Otoritas Plotting)**: Pengaitan anggaran (menetapkan `plotting_id` pada segmen) murni merupakan wewenang Operator Bappeda, bukan Operator Desa, Kecamatan, maupun OPD.
+*   **BR-PL-03 (Prasyarat Geotagging)**: Operator Desa hanya dapat melakukan geotagging infrastruktur apabila Operator Bappeda telah menerbitkan Plotting Anggaran yang aktif untuk wilayah desa yang bersangkutan. Geotagging tanpa Plotting Anggaran yang valid tidak diizinkan oleh sistem.
 
 ## 5. Aturan Autentikasi
 

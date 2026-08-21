@@ -4,8 +4,9 @@ Kebutuhan fungsional mendefinisikan fitur-fitur dan kemampuan yang harus dimilik
 
 ## 1. Geotagging Infrastruktur
 
-Sistem harus menyediakan fasilitas bagi Operator Desa untuk melakukan pendataan lokasi infrastruktur melalui mekanisme geotagging.
+Sistem harus menyediakan fasilitas bagi Operator Desa untuk melakukan pendataan lokasi infrastruktur melalui mekanisme geotagging, **dengan syarat Operator Bappeda telah menerbitkan Plotting Anggaran yang aktif untuk wilayah desa tersebut**.
 
+*   **FR-GT-00**: Sistem harus memvalidasi keberadaan Plotting Anggaran yang aktif sebelum mengizinkan Operator Desa membuat form geotagging. Jika belum ada Plotting Anggaran, sistem menolak pembuatan geotagging baru.
 *   **FR-GT-01**: Sistem harus menyediakan form geotagging yang memungkinkan Operator Desa memasukkan informasi dan titik koordinat lokasi infrastruktur.
 *   **FR-GT-02**: Sistem harus memungkinkan Operator Desa mengajukan (_submit_) form geotagging ke tingkat Kecamatan untuk diverifikasi.
 *   **FR-GT-03**: Sistem harus membatasi data geotagging yang dapat dibuat dan dilihat oleh Operator Desa hanya pada wilayah desanya (`id_desa`).
