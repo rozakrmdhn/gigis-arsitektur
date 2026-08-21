@@ -6,6 +6,15 @@ Sistem GIGIS / MELAROSA menggunakan model _Role-Based Access Control_ (RBAC) yan
 
 Berikut adalah peran (*roles*) utama yang terdefinisi di dalam sistem:
 
+### 0. Publik (`public` / tanpa autentikasi)
+
+* **Deskripsi**: Pengguna umum yang mengakses sistem tanpa melakukan _login_. Sistem mengenali pengguna ini sebagai pengguna anonim.
+* **Tanggung Jawab**:
+  * Melihat (read-only) peta infrastruktur spasial secara umum.
+  * Mengakses data batas wilayah administrasi (desa & kecamatan).
+  * Melihat _basemap_ dan layer peta yang dipublikasikan.
+* **Lingkup Akses**: Hanya data yang dipublikasikan secara umum (tanpa data sensitif atau data per-wilayah yang terbatas).
+
 ### 1. Super Admin (`super_admin`)
 
 * **Deskripsi**: Administrator sistem yang memiliki hak akses penuh ke seluruh fitur dan konfigurasi sistem tanpa batasan wilayah.
@@ -55,11 +64,11 @@ Berikut adalah peran (*roles*) utama yang terdefinisi di dalam sistem:
 
 Sistem menggunakan pustaka `@casl/ability` untuk menegakkan aturan otorisasi di _backend_. Aturan hak akses disimpan secara dinamis di dalam tabel `permissions`.
 
-| Entitas / Modul            | Operator Desa                                      | Operator Kecamatan                       | Operator Bappeda             | Operator OPD |
-| :------------------------- | :------------------------------------------------- | :--------------------------------------- | :--------------------------- | :----------- |
-| **Form Geotagging**        | Create, Read, Submit (Khusus Desa Ybs)             | Read, Verify, Submit to Bappeda          | Read, Approve, Reject        | Read-Only    |
-| **Infrastruktur Spasial**  | Read-Only (Khusus Desa Ybs)                        | Read, Update (Khusus Kecamatan Ybs)      | Read, Update, Approve (Semua) | Read-Only    |
-| **Laporan Monitoring**     | Read-Only (Khusus Desa Ybs)                        | Read, Verify, Submit to Bappeda          | Read, Approve, Reject        | Read-Only    |
-| **Batas Wilayah**          | Read-Only                                          | Read-Only                                | Read-Only                    | Read-Only    |
-| **Plotting Anggaran**      | No Access                                          | Read-Only                                | Create, Read, Update, Delete | No Access    |
-| **Manajemen Pengguna**     | No Access                                          | No Access                                | No Access (Only Super Admin) | No Access    |
+| Entitas / Modul            | Publik       | Operator Desa                                      | Operator Kecamatan                       | Operator Bappeda             | Operator OPD |
+| :------------------------- | :----------- | :------------------------------------------------- | :--------------------------------------- | :--------------------------- | :----------- |
+| **Form Geotagging**        | No Access    | Create, Read, Submit (Khusus Desa Ybs)             | Read, Verify, Submit to Bappeda          | Read, Approve, Reject        | Read-Only    |
+| **Infrastruktur Spasial**  | Read-Only    | Read-Only (Khusus Desa Ybs)                        | Read, Update (Khusus Kecamatan Ybs)      | Read, Update, Approve (Semua) | Read-Only    |
+| **Laporan Monitoring**     | No Access    | Read-Only (Khusus Desa Ybs)                        | Read, Verify, Submit to Bappeda          | Read, Approve, Reject        | Read-Only    |
+| **Batas Wilayah**          | Read-Only    | Read-Only                                          | Read-Only                                | Read-Only                    | Read-Only    |
+| **Plotting Anggaran**      | No Access    | No Access                                          | Read-Only                                | Create, Read, Update, Delete | No Access    |
+| **Manajemen Pengguna**     | No Access    | No Access                                          | No Access                                | No Access (Only Super Admin) | No Access    |
