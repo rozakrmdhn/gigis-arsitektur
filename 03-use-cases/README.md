@@ -38,7 +38,6 @@ flowchart LR
     OP --> UC1
     SA --> UC1
 
-    OD --> UC2
     OD --> UC3
     OD --> UC4
     OD --> UC9
