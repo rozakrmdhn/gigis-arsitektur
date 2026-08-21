@@ -69,6 +69,7 @@ Sistem menggunakan pustaka `@casl/ability` untuk menegakkan aturan otorisasi di 
 | **Form Geotagging**        | No Access    | Create, Read, Submit (Khusus Desa Ybs)             | Read, Verify, Submit to Bappeda          | Read, Approve, Reject        | Read-Only    |
 | **Infrastruktur Spasial**  | Read-Only    | Read-Only (Khusus Desa Ybs)                        | Read, Update (Khusus Kecamatan Ybs)      | Read, Update, Approve (Semua) | Read-Only    |
 | **Laporan Monitoring**     | No Access    | Read-Only (Khusus Desa Ybs)                        | Read, Verify, Submit to Bappeda          | Read, Approve, Reject        | Read-Only    |
+| **Draft Monitoring**       | No Access    | No Access                                          | Read-Only (Khusus Kecamatan Ybs)         | Create, Read, Update, Delete | No Access    |
 | **Batas Wilayah**          | Read-Only    | Read-Only                                          | Read-Only                                | Read-Only                    | Read-Only    |
 | **Plotting Anggaran**      | No Access    | No Access                                          | Read-Only                                | Create, Read, Update, Delete | No Access    |
 | **Manajemen Pengguna**     | No Access    | No Access                                          | No Access                                | No Access (Only Super Admin) | No Access    |

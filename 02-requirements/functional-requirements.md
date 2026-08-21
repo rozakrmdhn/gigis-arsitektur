@@ -27,7 +27,8 @@ Sistem harus mampu mengelola berbagai tipe infrastruktur secara dinamis melalui 
 Form geotagging dan data infrastruktur yang dimasukkan dari tingkat bawah harus melalui mekanisme verifikasi berjenjang.
 
 *   **FR-WF-01**: Operator Desa harus dapat melakukan pengajuan (_submit_) form geotagging ke tingkat Kecamatan untuk diverifikasi.
-*   **FR-WF-02**: Operator Kecamatan harus dapat memverifikasi, mengembalikan (_reject_ dengan catatan), atau meneruskan pengajuan ke tingkat Bappeda.
+*   **FR-WF-02a**: Operator Kecamatan harus dapat memverifikasi form geotagging dari Desa, lalu menyetujui atau mengembalikan (_reject_ dengan catatan).
+*   **FR-WF-02b**: Operator Kecamatan harus dapat mengajukan (_submit_) data infrastruktur hasil digitasinya sendiri ke tingkat Bappeda untuk diverifikasi.
 *   **FR-WF-03**: Operator Bappeda harus dapat menyetujui (_approve_) atau menolak pengajuan.
 *   **FR-WF-04**: Sistem harus merekam _log history_ dari setiap perubahan status verifikasi beserta nama verifikator dan catatannya.
 *   **FR-WF-05**: Sistem harus memungkinkan pengajuan masal (_batch submit_) untuk mempercepat proses persetujuan.

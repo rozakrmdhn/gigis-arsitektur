@@ -75,7 +75,15 @@ Sistem menyediakan peta interaktif untuk:
 
 ### 3.6 Pelaporan dan Informasi
 
-Sistem menyediakan informasi dan rekapitulasi yang dapat digunakan untuk pemantauan dan penyajian data infrastruktur.
+Sistem menyediakan informasi dan rekapitulasi kondisi infrastruktur per desa dan kecamatan yang dapat digunakan untuk pemantauan dan penyajian data. Rekapitulasi dapat diakses secara read-only oleh Operator OPD dan Operator Desa (khusus wilayahnya).
+
+### 3.7 Plotting Anggaran & Draft Monitoring
+
+Dikelola oleh Operator Bappeda sebagai dasar perencanaan dan inisiasi proses monitoring:
+
+- Pembuatan Plotting Anggaran berdasarkan tahun anggaran (prasyarat geotagging Desa).
+- Pembuatan Draft Monitoring berdasarkan Plotting Anggaran (acuan digitasi Kecamatan).
+- Pengaitan (_linking_) Plotting Anggaran dengan objek infrastruktur spasial.
 
 ---
 
