@@ -1,0 +1,56 @@
+# Actors & Roles
+
+Sistem GIGIS / MELAROSA menggunakan model _Role-Based Access Control_ (RBAC) yang dikombinasikan dengan pembatasan wilayah (ABAC - _Attribute-Based Access Control_) untuk mengatur hak akses setiap pengguna.
+
+## Daftar Aktor (Roles)
+
+Berikut adalah peran (*roles*) utama yang terdefinisi di dalam sistem:
+
+### 1. Super Admin (`super_admin`)
+*   **Deskripsi**: Administrator sistem yang memiliki hak akses penuh ke seluruh fitur dan konfigurasi sistem tanpa batasan wilayah.
+*   **Tanggung Jawab**: Manajemen pengguna, manajemen role & permissions, manajemen referensi master, dan pemantauan sistem secara keseluruhan.
+*   **Lingkup Akses**: Seluruh Kabupaten (Semua Kecamatan & Desa).
+
+### 2. Operator Bappeda (`operator_bappeda`)
+*   **Deskripsi**: Pengguna dari tingkat Kabupaten (Badan Perencanaan Pembangunan Daerah) yang bertugas sebagai verifikator akhir dan perencana.
+*   **Tanggung Jawab**: 
+    *   Menerima dan memverifikasi usulan/segmen infrastruktur yang diajukan oleh Kecamatan.
+    *   Melakukan plotting anggaran.
+    *   Menganalisis hasil pelaporan monitoring seluruh wilayah.
+*   **Lingkup Akses**: Seluruh Kabupaten (Semua Kecamatan & Desa).
+
+### 3. Operator Kecamatan (`operator_kecamatan`)
+*   **Deskripsi**: Pengguna yang bertanggung jawab mengelola dan memverifikasi data pada tingkat Kecamatan.
+*   **Tanggung Jawab**:
+    *   Melihat dan mengelola data infrastruktur di dalam kecamatannya.
+    *   Memverifikasi data/laporan yang diajukan oleh Desa sebelum diteruskan ke Bappeda.
+    *   Melakukan input data infrastruktur atau monitoring mewakili kecamatan.
+*   **Lingkup Akses**: Terbatas pada ID Kecamatan (`id_kecamatan`) yang melekat pada profil penggunanya.
+
+### 4. Operator Desa (`operator_desa`)
+*   **Deskripsi**: Pengguna pada tingkat paling dasar (Pemerintah Desa) yang bertugas melakukan _data entry_ dan inventarisasi infrastruktur desa.
+*   **Tanggung Jawab**:
+    *   Melakukan digitasi infrastruktur spasial (segmen/area).
+    *   Memasukkan atribut infrastruktur.
+    *   Membuat laporan monitoring dan realisasi pembangunan di desanya.
+    *   Mengajukan (_submit_) data ke tingkat Kecamatan untuk diverifikasi.
+*   **Lingkup Akses**: Terbatas pada ID Desa (`id_desa`) yang melekat pada profil penggunanya.
+
+### 5. Operator OPD (`operator_opd`)
+*   **Deskripsi**: Pengguna dari Organisasi Perangkat Daerah teknis (misalnya: Dinas PUPR).
+*   **Tanggung Jawab**:
+    *   Mengelola infrastruktur yang menjadi kewenangan kabupaten/dinas (contoh: Jalan Kabupaten).
+    *   Merespons usulan yang diteruskan oleh Bappeda.
+*   **Lingkup Akses**: Dibatasi berdasarkan unit kerja/OPD terkait, melintasi batas kecamatan/desa sesuai aset kewenangannya.
+
+## Matriks Hak Akses (Permissions)
+
+Sistem menggunakan pustaka `@casl/ability` untuk menegakkan aturan otorisasi di _backend_. Aturan hak akses disimpan secara dinamis di dalam tabel `permissions`.
+
+| Entitas / Modul | Operator Desa | Operator Kecamatan | Operator Bappeda |
+| :--- | :--- | :--- | :--- |
+| **Infrastruktur Spasial** | Create, Read, Update (Khusus Desa Ybs) | Read, Update (Khusus Kecamatan Ybs) | Read, Update, Approve (Semua) |
+| **Laporan Monitoring** | Create, Read, Submit | Read, Verify, Submit to Bappeda | Read, Approve, Reject |
+| **Batas Wilayah** | Read-Only | Read-Only | Read-Only |
+| **Plotting Anggaran** | No Access | Read-Only | Create, Read, Update, Delete |
+| **Manajemen Pengguna** | No Access | No Access | No Access (Only Super Admin) |
