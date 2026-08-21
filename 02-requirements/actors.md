@@ -31,8 +31,8 @@ Berikut adalah peran (*roles*) utama yang terdefinisi di dalam sistem:
 *   **Deskripsi**: Pengguna pada tingkat paling dasar (Pemerintah Desa) yang bertugas melakukan _data entry_ dan inventarisasi infrastruktur desa.
 *   **Tanggung Jawab**:
     *   Melakukan digitasi infrastruktur spasial (segmen/area).
-    *   Memasukkan atribut infrastruktur.
-    *   Membuat laporan monitoring dan realisasi pembangunan di desanya.
+    *   Melakukan geotagging lokasi infrastruktur.
+    *   Memasukkan atribut infrastruktur serta membuat laporan monitoring dan realisasi pembangunan di desanya.
     *   Mengajukan (_submit_) data ke tingkat Kecamatan untuk diverifikasi.
 *   **Lingkup Akses**: Terbatas pada ID Desa (`id_desa`) yang melekat pada profil penggunanya.
 
