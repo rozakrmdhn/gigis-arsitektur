@@ -5,31 +5,32 @@ Bagian ini mendefinisikan kasus penggunaan (_Use Cases_) utama di dalam sistem G
 ## Diagram Use Case
 
 ```mermaid
-usecaseDiagram
-    actor "Operator Desa" as OD
-    actor "Operator Kecamatan" as OK
-    actor "Operator Bappeda" as OB
-    actor "Operator OPD" as OP
-    actor "Super Admin" as SA
+flowchart LR
+    %% Actors
+    OD["Operator Desa"]
+    OK["Operator Kecamatan"]
+    OB["Operator Bappeda"]
+    OP["Operator OPD"]
+    SA["Super Admin"]
 
-    package "GIGIS / MELAROSA" {
-        usecase "Login & Autentikasi" as UC1
+    subgraph "GIGIS / MELAROSA"
+        UC1(["Login & Autentikasi"])
         
-        usecase "Digitasi Infrastruktur (Segmen/Area)" as UC2
-        usecase "Input Atribut Infrastruktur" as UC3
-        usecase "Submit Data ke Kecamatan" as UC4
+        UC2(["Digitasi Infrastruktur (Segmen/Area)"])
+        UC3(["Input Atribut Infrastruktur"])
+        UC4(["Submit Data ke Kecamatan"])
         
-        usecase "Verifikasi Data Desa" as UC5
-        usecase "Submit Data ke Bappeda" as UC6
+        UC5(["Verifikasi Data Desa"])
+        UC6(["Submit Data ke Bappeda"])
         
-        usecase "Approve/Reject Data" as UC7
-        usecase "Plotting Anggaran" as UC8
+        UC7(["Approve/Reject Data"])
+        UC8(["Plotting Anggaran"])
         
-        usecase "Monitoring Kondisi Fisik" as UC9
-        usecase "Input Realisasi Pembangunan" as UC10
+        UC9(["Monitoring Kondisi Fisik"])
+        UC10(["Input Realisasi Pembangunan"])
         
-        usecase "Manajemen Pengguna & Role" as UC11
-    }
+        UC11(["Manajemen Pengguna & Role"])
+    end
 
     OD --> UC1
     OK --> UC1
