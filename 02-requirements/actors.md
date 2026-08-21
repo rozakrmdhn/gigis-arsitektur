@@ -39,6 +39,8 @@ Berikut adalah peran (*roles*) utama yang terdefinisi di dalam sistem:
   * Memasukkan informasi form data/laporan geotagging.
   * Melakukan laporan geotagging lokasi infrastruktur.
   * Mengajukan submit form data/laporan geotagging ke tingkat Kecamatan untuk diverifikasi.
+  * Melihat dan memantau (read-only) data infrastruktur khusus desanya.
+  * Mengakses laporan monitoring dan statistik infrastruktur khusus desanya.
 * **Lingkup Akses**: Terbatas pada ID Desa (`id_desa`) yang melekat pada profil penggunanya.
 
 ### 5. Operator OPD (`operator_opd`)
@@ -56,8 +58,8 @@ Sistem menggunakan pustaka `@casl/ability` untuk menegakkan aturan otorisasi di 
 | Entitas / Modul            | Operator Desa                                      | Operator Kecamatan                       | Operator Bappeda             | Operator OPD |
 | :------------------------- | :------------------------------------------------- | :--------------------------------------- | :--------------------------- | :----------- |
 | **Form Geotagging**        | Create, Read, Submit (Khusus Desa Ybs)             | Read, Verify, Submit to Bappeda          | Read, Approve, Reject        | Read-Only    |
-| **Infrastruktur Spasial**  | No Access                                          | Read, Update (Khusus Kecamatan Ybs)      | Read, Update, Approve (Semua) | Read-Only    |
-| **Laporan Monitoring**     | No Access                                          | Read, Verify, Submit to Bappeda          | Read, Approve, Reject        | Read-Only    |
+| **Infrastruktur Spasial**  | Read-Only (Khusus Desa Ybs)                        | Read, Update (Khusus Kecamatan Ybs)      | Read, Update, Approve (Semua) | Read-Only    |
+| **Laporan Monitoring**     | Read-Only (Khusus Desa Ybs)                        | Read, Verify, Submit to Bappeda          | Read, Approve, Reject        | Read-Only    |
 | **Batas Wilayah**          | Read-Only                                          | Read-Only                                | Read-Only                    | Read-Only    |
 | **Plotting Anggaran**      | No Access                                          | Read-Only                                | Create, Read, Update, Delete | No Access    |
 | **Manajemen Pengguna**     | No Access                                          | No Access                                | No Access (Only Super Admin) | No Access    |

@@ -9,6 +9,8 @@ Sistem harus menyediakan fasilitas bagi Operator Desa untuk melakukan pendataan 
 *   **FR-GT-01**: Sistem harus menyediakan form geotagging yang memungkinkan Operator Desa memasukkan informasi dan titik koordinat lokasi infrastruktur.
 *   **FR-GT-02**: Sistem harus memungkinkan Operator Desa mengajukan (_submit_) form geotagging ke tingkat Kecamatan untuk diverifikasi.
 *   **FR-GT-03**: Sistem harus membatasi data geotagging yang dapat dibuat dan dilihat oleh Operator Desa hanya pada wilayah desanya (`id_desa`).
+*   **FR-GT-04**: Sistem harus memungkinkan Operator Desa melihat (read-only) data infrastruktur spasial yang berada di dalam wilayah desanya.
+*   **FR-GT-05**: Sistem harus memungkinkan Operator Desa mengakses laporan monitoring dan statistik kondisi infrastruktur khusus desanya secara read-only.
 
 ## 2. Manajemen Spasial Terpadu (Unified Spatial Management)
 
