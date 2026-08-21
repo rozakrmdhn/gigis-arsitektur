@@ -1,6 +1,6 @@
 # Business Rules
 
-Aturan bisnis (Business Rules) memuat kebijakan-kebijakan operasional yang ditegakkan secara _hard-coded_ di dalam logika sistem (_backend_ maupun _frontend_) GIGIS / MELAROSA.
+Aturan bisnis memuat kebijakan-kebijakan operasional yang bersumber dari proses bisnis dan regulasi organisasi, yang ditegakkan oleh sistem GIGIS / MELAROSA.
 
 ## 1. Aturan Verifikasi Data
 
@@ -8,10 +8,10 @@ Aturan bisnis (Business Rules) memuat kebijakan-kebijakan operasional yang diteg
 *   **BR-VR-02 (Kunci Edit)**: Jika sebuah form geotagging telah di-_submit_ ke Kecamatan atau Bappeda, Operator Desa tidak diizinkan lagi mengubah isinya hingga data tersebut ditolak (dikembalikan) atau di-klaim kembali.
 *   **BR-VR-03 (Alur Mundur/Revert)**: Data yang ditolak oleh Bappeda atau Kecamatan harus menyertakan "Catatan Verifikasi" yang merinci alasan penolakan agar Operator Desa dapat memperbaikinya.
 
-## 2. Aturan Data Spasial
+## 2. Aturan Wilayah
 
-*   **BR-SP-01 (Konsistensi Geometri)**: Segmen spasial harus berjenis geometri yang sesuai. Jika tipe infrastruktur didefinisikan sebagai garis, maka koordinat yang dimasukkan (melalui endpoint `/segmen`) harus berupa `LineString`. Demikian halnya dengan `/area` yang harus berupa `Polygon`.
-*   **BR-SP-02 (Pembatasan Wilayah Geotagging)**: Titik koordinat geotagging yang ditandai oleh Operator Desa harus berada di dalam batas poligon administrasi desanya. Sistem secara logis mengaitkan data geotagging tersebut ke `id_desa` milik pembuatnya.
+*   **BR-WL-01 (Pembatasan Wilayah Geotagging)**: Titik koordinat geotagging yang ditandai oleh Operator Desa harus berada di dalam batas poligon administrasi desanya. Sistem secara logis mengaitkan data geotagging tersebut ke `id_desa` milik pembuatnya.
+*   **BR-WL-02 (Pembatasan Akses Data)**: Operator Desa hanya dapat melihat dan mengelola data yang berada di dalam wilayah desanya (`id_desa`). Operator Kecamatan hanya dapat mengelola data di wilayah kecamatannya (`id_kecamatan`).
 
 ## 3. Aturan Monitoring & Realisasi
 
@@ -25,8 +25,3 @@ Aturan bisnis (Business Rules) memuat kebijakan-kebijakan operasional yang diteg
 *   **BR-PL-01 (Satu Tahun, Satu Plot)**: Suatu usulan atau segmen infrastruktur sebaiknya hanya dikaitkan dengan satu Plotting Anggaran dari jenis sumber dana yang sama dalam satu tahun berjalan, kecuali diizinkan spesifik oleh regulasi multi-tahun.
 *   **BR-PL-02 (Otoritas Plotting)**: Pengaitan anggaran (menetapkan `plotting_id` pada segmen) murni merupakan wewenang Operator Bappeda, bukan Operator Desa, Kecamatan, maupun OPD.
 *   **BR-PL-03 (Prasyarat Geotagging)**: Operator Desa hanya dapat melakukan geotagging infrastruktur apabila Operator Bappeda telah menerbitkan Plotting Anggaran yang aktif untuk wilayah desa yang bersangkutan. Geotagging tanpa Plotting Anggaran yang valid tidak diizinkan oleh sistem.
-
-## 5. Aturan Autentikasi
-
-*   **BR-AU-01 (Token Expiry)**: Access Token (JWT) memiliki batas waktu kedaluwarsa (_expiry_) yang singkat demi keamanan. Aplikasi klien wajib menggunakan mekanisme _Refresh Token_ di _background_ (/v1/refresh) untuk memperpanjang sesi tanpa perlu _login_ ulang.
-*   **BR-AU-02 (Pencabutan Sesi)**: Jika admin mengubah _role_ atau wilayah _(id_desa)_ dari suatu akun pengguna, sistem dapat secara sepihak mencabut (_revoke_) _session_ JWT pengguna tersebut sehingga klien akan dipaksa melakukan _login_ ulang untuk mendapatkan izin yang baru.
