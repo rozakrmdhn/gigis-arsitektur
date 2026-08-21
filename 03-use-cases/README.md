@@ -52,9 +52,6 @@ flowchart LR
     OB --> UC7
     OB --> UC8
 
-    OP --> UC2
-    OP --> UC3
-
     SA --> UC11
 ```
 

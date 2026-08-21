@@ -37,11 +37,11 @@ Berikut adalah peran (*roles*) utama yang terdefinisi di dalam sistem:
 *   **Lingkup Akses**: Terbatas pada ID Desa (`id_desa`) yang melekat pada profil penggunanya.
 
 ### 5. Operator OPD (`operator_opd`)
-*   **Deskripsi**: Pengguna dari Organisasi Perangkat Daerah teknis (misalnya: Dinas PUPR).
+*   **Deskripsi**: Pengguna dari Organisasi Perangkat Daerah teknis (misalnya: Dinas PUPR) yang memantau data spasial.
 *   **Tanggung Jawab**:
-    *   Mengelola infrastruktur yang menjadi kewenangan kabupaten/dinas (contoh: Jalan Kabupaten).
-    *   Merespons usulan yang diteruskan oleh Bappeda.
-*   **Lingkup Akses**: Dibatasi berdasarkan unit kerja/OPD terkait, melintasi batas kecamatan/desa sesuai aset kewenangannya.
+    *   Melihat dan memantau (read-only) data infrastruktur yang ada di dalam sistem.
+    *   Mengakses laporan monitoring dan statistik infrastruktur sebagai bahan evaluasi dinas.
+*   **Lingkup Akses**: Read-only lintas wilayah kecamatan/desa sesuai dengan kepentingan OPD terkait.
 
 ## Matriks Hak Akses (Permissions)
 
